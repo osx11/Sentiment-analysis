@@ -1,1 +1,1 @@
-Thanks to this tutorual: https://www.youtube.com/watch?v=DDByc9LyMV8
+Thanks to this explanation: https://www.youtube.com/watch?v=DDByc9LyMV8
