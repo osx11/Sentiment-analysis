@@ -1,1 +1,1 @@
-Thanks to this explanation: https://www.youtube.com/watch?v=DDByc9LyMV8
+Sentiment analysis neural network for school project
