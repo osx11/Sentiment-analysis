@@ -1,8 +1,11 @@
-from sys import argv
+from sys import argv, exit
+
+from PyQt5 import QtWidgets
 
 from neural_network import NeuralNetwork
 from exceptions.InvalidStartParameter import InvalidStartParameter
-from settings import NEGATIVE_PERCENT, POSITIVE_PERCENT
+from gui.gui import MainWindow
+
 
 if __name__ == '__main__':
     if len(argv) > 1:
@@ -24,12 +27,7 @@ if __name__ == '__main__':
                 while True:
                     text = input('> ')
                     prediction = nn.predict(text)
-                    if NEGATIVE_PERCENT <= prediction < POSITIVE_PERCENT:
-                        print(f'Нейтральный [{prediction:.3}]')
-                    elif prediction >= POSITIVE_PERCENT:
-                        print(f'Позитивный [{prediction:.3}]')
-                    else:
-                        print(f'Негативный [{prediction:.3}]')
+                    print(f'{prediction[0]} [{prediction[1]}]')
             except (KeyboardInterrupt, SystemExit):
                 print('Thank you and goodbye!')
 
@@ -37,3 +35,9 @@ if __name__ == '__main__':
             raise InvalidStartParameter
 
         exit(0)
+
+    app = QtWidgets.QApplication(argv)
+    main_window = MainWindow()
+    main_window.show()
+
+    exit(app.exec_())

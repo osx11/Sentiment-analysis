@@ -111,7 +111,9 @@ class NeuralNetwork:
         :param text: текст, тональность которого нужно определить
         :type text: str
 
-        :return:
+        :return prediction: кортеж с двумя элементами: окончательная оценка (положительный, нейтральный, отрицательный)
+        и вероятность в процентах
+        :type: tuple
         """
 
         for word in text.split(' '):
@@ -122,4 +124,11 @@ class NeuralNetwork:
         x_pad = pad_tokens(tokens)
         prediction = self.model.predict(x_pad)[0][0]
 
-        return prediction
+        if st.NEGATIVE_PERCENT <= prediction <st. POSITIVE_PERCENT:
+            result = 'Нейтральный'
+        elif prediction >= st.POSITIVE_PERCENT:
+            result = 'Позитивный'
+        else:
+            result = 'Негативный'
+
+        return result, f'{prediction*100:.4}%'
