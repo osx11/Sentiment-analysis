@@ -33,7 +33,7 @@ class Ui_SentimentAnalysis(object):
 "")
         self.mountain.setObjectName("mountain")
         self.copyright = QtWidgets.QLabel(self.centralwidget)
-        self.copyright.setGeometry(QtCore.QRect(1170, 750, 321, 31))
+        self.copyright.setGeometry(QtCore.QRect(1140, 750, 351, 31))
         self.copyright.setStyleSheet("background: transparent;\n"
 "font: 13pt \"Fregat\";\n"
 "color: #ffffff;")
@@ -91,7 +91,7 @@ class Ui_SentimentAnalysis(object):
         self.predict_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.predict_button.setStyleSheet("background-color: #4d1a81;\n"
 "color: #ffffff;\n"
-"font: 21pt \"Fregat\";\n"
+"font: 19pt \"Fregat\";\n"
 "border-radius: 6px;\n"
 "max-width: 250px;\n"
 "min-height: 45px;\n"
@@ -126,14 +126,14 @@ class Ui_SentimentAnalysis(object):
         self.verticalLayout.addWidget(self.prediction_percent)
         self.verticalLayout_3.addLayout(self.verticalLayout)
         self.information_button = QtWidgets.QLabel(self.centralwidget)
-        self.information_button.setGeometry(QtCore.QRect(10, 750, 141, 31))
+        self.information_button.setGeometry(QtCore.QRect(10, 750, 161, 31))
         self.information_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.information_button.setStyleSheet("background: transparent;\n"
 "font: 13pt \"Fregat\";\n"
 "color: #ffffff;")
         self.information_button.setObjectName("information_button")
         self.source_code_link = QtWidgets.QLabel(self.centralwidget)
-        self.source_code_link.setGeometry(QtCore.QRect(160, 750, 141, 31))
+        self.source_code_link.setGeometry(QtCore.QRect(180, 750, 191, 31))
         self.source_code_link.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.source_code_link.setFocusPolicy(QtCore.Qt.NoFocus)
         self.source_code_link.setStyleSheet("background: transparent;\n"
