@@ -3,3 +3,4 @@ keras>=2.2.5
 pandas>=0.25.1
 numpy>=1.17.2
 snowballstemmer>=1.9.1
+pyqt5>=5.13.1
