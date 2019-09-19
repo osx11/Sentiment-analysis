@@ -1,1 +1,3 @@
-Sentiment analysis neural network for school project
+## Программа для определения эмоционального окраса текста
+
+Инструкция по использованию программы и информация для разработчиков: https://github.com/osx11/Sentiment-analysis/wiki/Manual
