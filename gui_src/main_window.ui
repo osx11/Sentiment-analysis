@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SentimentAnalysis</class>
+ <widget class="QMainWindow" name="SentimentAnalysis">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>791</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Fregat</family>
+    <weight>50</weight>
+    <bold>false</bold>
+    <stylestrategy>PreferAntialias</stylestrategy>
+    <kerning>false</kerning>
+   </font>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>Sentiment Analysis</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:0.829818, x2:1, y2:0.307, stop:0 rgba(230, 0, 230, 255), stop:1 rgba(138, 2, 255, 255))</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="mountain">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>270</y>
+      <width>1651</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;
+</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/mountain/mountain.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="copyright">
+    <property name="geometry">
+     <rect>
+      <x>1140</x>
+      <y>750</y>
+      <width>351</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;
+font: 13pt &quot;Fregat&quot;;
+color: #ffffff;</string>
+    </property>
+    <property name="text">
+     <string>Copyright © 2020 Grigory Gilev</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="main" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>26</y>
+      <width>1481</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;
+</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QLabel" name="title">
+       <property name="font">
+        <font>
+         <family>Fregat</family>
+         <pointsize>36</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #ffffff;
+font: 36pt &quot;Fregat&quot;;
+font-family: 'Fregat';
+font-weight: normal;
+background-color: transparent;
+margin-bottom: 27px;</string>
+       </property>
+       <property name="text">
+        <string>S E N T I M E N T  A N A L Y S I S</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignHCenter|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QPlainTextEdit" name="text_input">
+         <property name="cursor" stdset="0">
+          <cursorShape>IBeamCursor</cursorShape>
+         </property>
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #ecdbf7;
+height: 10px;
+border-radius: 3px;
+color: #a7a7a7;
+font: 32px &quot;Fregat&quot;;
+min-height: 45px;
+max-height: 45px;
+max-width: 1300px;
+margin-left: 93px;
+margin-bottom: 30px;</string>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::ImhMultiLine</set>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="placeholderText">
+          <string>Введите здесь что-нибудь для определения эмоционального окраса</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="predict_button">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #4d1a81;
+color: #ffffff;
+font: 19pt &quot;Fregat&quot;;
+border-radius: 6px;
+max-width: 250px;
+min-height: 45px;
+/*margin-left: 618px;*/
+padding: 5px 14px 5px 14px;</string>
+           </property>
+           <property name="text">
+            <string>Предсказать</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="prediction_result">
+         <property name="styleSheet">
+          <string notr="true">background-color: transparent;
+color: #fff;
+font: 42pt &quot;Fregat&quot;;
+margin-top: 10px;
+text-transform: uppercase;
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="prediction_percent">
+         <property name="styleSheet">
+          <string notr="true">background-color: transparent;
+color: #fff;
+font: 26pt &quot;Fregat&quot;;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="information_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>750</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;
+font: 13pt &quot;Fregat&quot;;
+color: #ffffff;</string>
+    </property>
+    <property name="text">
+     <string>О программе</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="source_code_link">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>750</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;
+font: 13pt &quot;Fregat&quot;;
+color: #ffffff;
+</string>
+    </property>
+    <property name="text">
+     <string>Исходный код</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="mountains.qrc"/>
+ </resources>
+ <connections/>
+</ui>
