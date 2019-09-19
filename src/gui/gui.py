@@ -25,7 +25,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.source_code_link.mousePressEvent = open_source_code_link
 
     def predict(self):
-        input_text = self.ui.text_input.toPlainText()
+        input_text = self.ui.text_input.text()
 
         prediction = self.neural_network.predict(input_text)
 
@@ -43,5 +43,4 @@ class InformationWindow(QtWidgets.QDialog):
         self.ui.setupUi(self)
 
         self.ui.source_code_link.mousePressEvent = open_source_code_link
-
 

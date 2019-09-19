@@ -8,13 +8,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from . import mountains_rc
+from . import moon_rc
 
 
 class Ui_SentimentAnalysis(object):
     def setupUi(self, SentimentAnalysis):
         SentimentAnalysis.setObjectName("SentimentAnalysis")
-        SentimentAnalysis.setFixedSize(1500, 791)
+        SentimentAnalysis.setFixedSize(1775, 846)
         font = QtGui.QFont()
         font.setFamily("Fregat")
         font.setBold(False)
@@ -24,22 +24,17 @@ class Ui_SentimentAnalysis(object):
         SentimentAnalysis.setFont(font)
         SentimentAnalysis.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         SentimentAnalysis.setAutoFillBackground(False)
-        SentimentAnalysis.setStyleSheet("background-color: qlineargradient(spread:pad, x1:1, y1:0.829818, x2:1, y2:0.307, stop:0 rgba(230, 0, 230, 255), stop:1 rgba(138, 2, 255, 255))")
+        SentimentAnalysis.setStyleSheet("background-color: qlineargradient(spread:pad, x1:1, y1:0.829818, x2:1, y2:0.307, stop:0 rgba(66, 73, 139, 255), stop:1 rgba(112, 129, 214, 255))")
         self.centralwidget = QtWidgets.QWidget(SentimentAnalysis)
         self.centralwidget.setObjectName("centralwidget")
-        self.mountain = QtWidgets.QLabel(self.centralwidget)
-        self.mountain.setGeometry(QtCore.QRect(0, 270, 1651, 601))
-        self.mountain.setStyleSheet("background: transparent;\n"
-"")
-        self.mountain.setObjectName("mountain")
         self.copyright = QtWidgets.QLabel(self.centralwidget)
-        self.copyright.setGeometry(QtCore.QRect(1140, 750, 351, 31))
+        self.copyright.setGeometry(QtCore.QRect(1420, 810, 351, 31))
         self.copyright.setStyleSheet("background: transparent;\n"
 "font: 13pt \"Fregat\";\n"
 "color: #ffffff;")
         self.copyright.setObjectName("copyright")
         self.main = QtWidgets.QWidget(self.centralwidget)
-        self.main.setGeometry(QtCore.QRect(10, 26, 1481, 441))
+        self.main.setGeometry(QtCore.QRect(10, 90, 1761, 481))
         self.main.setStyleSheet("background: transparent;\n"
 "")
         self.main.setObjectName("main")
@@ -59,48 +54,53 @@ class Ui_SentimentAnalysis(object):
 "font-family: \'Fregat\';\n"
 "font-weight: normal;\n"
 "background-color: transparent;\n"
-"margin-bottom: 27px;")
+"margin-bottom: 65px;")
         self.title.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.title.setObjectName("title")
         self.verticalLayout_3.addWidget(self.title)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.text_input = QtWidgets.QPlainTextEdit(self.main)
-        self.text_input.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.IBeamCursor))
-        self.text_input.setAcceptDrops(True)
-        self.text_input.setStyleSheet("background-color: #ecdbf7;\n"
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem)
+        self.text_input = QtWidgets.QLineEdit(self.main)
+        self.text_input.setStyleSheet("background-color: #e9e9e9;\n"
 "height: 10px;\n"
 "border-radius: 3px;\n"
-"color: #a7a7a7;\n"
+"color: #g1g1g1;\n"
 "font: 32px \"Fregat\";\n"
 "min-height: 45px;\n"
 "max-height: 45px;\n"
-"max-width: 1300px;\n"
-"margin-left: 93px;\n"
+"max-width: 1600px;\n"
+"min-width: 1600px;\n"
 "margin-bottom: 30px;")
-        self.text_input.setInputMethodHints(QtCore.Qt.ImhMultiLine)
-        self.text_input.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.text_input.setObjectName("text_input")
-        self.verticalLayout_2.addWidget(self.text_input)
+        self.horizontalLayout_3.addWidget(self.text_input)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem1)
+        self.horizontalLayout_2.addLayout(self.horizontalLayout_3)
+        self.verticalLayout_3.addLayout(self.horizontalLayout_2)
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem2)
         self.predict_button = QtWidgets.QPushButton(self.main)
         self.predict_button.setEnabled(True)
         self.predict_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.predict_button.setStyleSheet("background-color: #4d1a81;\n"
+        self.predict_button.setStyleSheet("background-color: #373888;\n"
 "color: #ffffff;\n"
-"font: 19pt \"Fregat\";\n"
+"font: 17pt \"Fregat\";\n"
 "border-radius: 6px;\n"
 "max-width: 250px;\n"
 "min-height: 45px;\n"
-"/*margin-left: 618px;*/\n"
-"padding: 5px 14px 5px 14px;")
+"padding: 5px 22px 5px 22px;")
         self.predict_button.setObjectName("predict_button")
         self.horizontalLayout.addWidget(self.predict_button)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem1)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem3)
         self.verticalLayout_2.addLayout(self.horizontalLayout)
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
         self.verticalLayout = QtWidgets.QVBoxLayout()
@@ -108,8 +108,8 @@ class Ui_SentimentAnalysis(object):
         self.prediction_result = QtWidgets.QLabel(self.main)
         self.prediction_result.setStyleSheet("background-color: transparent;\n"
 "color: #fff;\n"
-"font: 42pt \"Fregat\";\n"
-"margin-top: 10px;\n"
+"font: 38pt \"Fregat\";\n"
+"margin-top: 25px;\n"
 "text-transform: uppercase;\n"
 "")
         self.prediction_result.setText("")
@@ -119,21 +119,22 @@ class Ui_SentimentAnalysis(object):
         self.prediction_percent = QtWidgets.QLabel(self.main)
         self.prediction_percent.setStyleSheet("background-color: transparent;\n"
 "color: #fff;\n"
-"font: 26pt \"Fregat\";")
+"font: 25pt \"Fregat\";\n"
+"margin-top: -12px;")
         self.prediction_percent.setText("")
         self.prediction_percent.setAlignment(QtCore.Qt.AlignCenter)
         self.prediction_percent.setObjectName("prediction_percent")
         self.verticalLayout.addWidget(self.prediction_percent)
         self.verticalLayout_3.addLayout(self.verticalLayout)
         self.information_button = QtWidgets.QLabel(self.centralwidget)
-        self.information_button.setGeometry(QtCore.QRect(10, 750, 161, 31))
+        self.information_button.setGeometry(QtCore.QRect(10, 810, 161, 31))
         self.information_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.information_button.setStyleSheet("background: transparent;\n"
 "font: 13pt \"Fregat\";\n"
 "color: #ffffff;")
         self.information_button.setObjectName("information_button")
         self.source_code_link = QtWidgets.QLabel(self.centralwidget)
-        self.source_code_link.setGeometry(QtCore.QRect(180, 750, 191, 31))
+        self.source_code_link.setGeometry(QtCore.QRect(180, 810, 191, 31))
         self.source_code_link.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.source_code_link.setFocusPolicy(QtCore.Qt.NoFocus)
         self.source_code_link.setStyleSheet("background: transparent;\n"
@@ -141,6 +142,17 @@ class Ui_SentimentAnalysis(object):
 "color: #ffffff;\n"
 "")
         self.source_code_link.setObjectName("source_code_link")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(960, 0, 861, 831))
+        self.label.setStyleSheet("background: transparent;\n"
+"")
+        self.label.setObjectName("label")
+        self.copyright.raise_()
+        self.information_button.raise_()
+        self.source_code_link.raise_()
+        self.label.raise_()
+        self.main.raise_()
+        self.text_input.raise_()
         SentimentAnalysis.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(SentimentAnalysis)
@@ -149,10 +161,10 @@ class Ui_SentimentAnalysis(object):
     def retranslateUi(self, SentimentAnalysis):
         _translate = QtCore.QCoreApplication.translate
         SentimentAnalysis.setWindowTitle(_translate("SentimentAnalysis", "Sentiment Analysis"))
-        self.mountain.setText(_translate("SentimentAnalysis", "<html><head/><body><p><img src=\":/mountain/mountain.png\"/></p></body></html>"))
         self.copyright.setText(_translate("SentimentAnalysis", "Copyright © 2020 Grigory Gilev"))
         self.title.setText(_translate("SentimentAnalysis", "S E N T I M E N T  A N A L Y S I S"))
-        self.text_input.setPlaceholderText(_translate("SentimentAnalysis", "Введите здесь что-нибудь для определения эмоционального окраса"))
+        self.text_input.setPlaceholderText(_translate("SentimentAnalysis", "Введите текст для определения его эмоционального окраса"))
         self.predict_button.setText(_translate("SentimentAnalysis", "Предсказать"))
         self.information_button.setText(_translate("SentimentAnalysis", "О программе"))
         self.source_code_link.setText(_translate("SentimentAnalysis", "Исходный код"))
+        self.label.setText(_translate("SentimentAnalysis", "<html><head/><body><p><img src=\":/moon/moon.png\"/></p></body></html>"))

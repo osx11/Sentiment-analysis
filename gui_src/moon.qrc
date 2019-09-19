@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="moon">
+    <file>moon.png</file>
+  </qresource>
+</RCC>
