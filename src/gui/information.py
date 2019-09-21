@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Information(object):
     def setupUi(self, Information):
         Information.setObjectName("Information")
-        Information.setFixedSize(765, 731)
+        Information.setFixedSize(842, 731)
         self.verticalLayout = QtWidgets.QVBoxLayout(Information)
         self.verticalLayout.setContentsMargins(9, 9, 9, 9)
         self.verticalLayout.setSpacing(3)

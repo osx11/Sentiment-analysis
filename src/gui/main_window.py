@@ -15,6 +15,8 @@ class Ui_SentimentAnalysis(object):
     def setupUi(self, SentimentAnalysis):
         SentimentAnalysis.setObjectName("SentimentAnalysis")
         SentimentAnalysis.setFixedSize(1775, 846)
+        font_db = QtGui.QFontDatabase()
+        font_db.addApplicationFont("fregat.otf")
         font = QtGui.QFont()
         font.setFamily("Fregat")
         font.setBold(False)
