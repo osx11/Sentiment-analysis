@@ -25,7 +25,7 @@ class NeuralNetwork:
         1x Activation. Применяет функцию активации для выходных данных
 
         :param load_existing_data: загрузить существующие данные. По умолчанию создаются и
-        сохраняются новая модель ивсе данные
+        сохраняются новая модель и все данные
         :type load_existing_data: bool
         """
 
@@ -124,7 +124,7 @@ class NeuralNetwork:
         x_pad = pad_tokens(tokens)
         prediction = self.model.predict(x_pad)[0][0]
 
-        if st.NEGATIVE_PERCENT <= prediction <st. POSITIVE_PERCENT:
+        if st.NEGATIVE_PERCENT <= prediction < st. POSITIVE_PERCENT:
             result = 'Нейтральный'
         elif prediction >= st.POSITIVE_PERCENT:
             result = 'Позитивный'
