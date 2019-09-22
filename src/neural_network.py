@@ -17,12 +17,10 @@ def pad_tokens(tokens):
 class NeuralNetwork:
     def __init__(self, load_existing_data=False):
         """
-        модель имеет всего 6 слоев:
+        модель имеет всего 4 слоев:
         1x Embedding. Векторное представления слов
         2x LSTM. На первом 16 нейронов, на втором - 8. Слой долгой краткосрочной памяти
-        1x Dropout. Препятствует переобучению, сбрасывая некоторую часть входных данных
-        1x Dense. Обычный перцептрон
-        1x Activation. Применяет функцию активации для выходных данных
+        1x Dense. Обычный перцептрон с сигмоидальной функцией активации
 
         :param load_existing_data: загрузить существующие данные. По умолчанию создаются и
         сохраняются новая модель и все данные
@@ -44,9 +42,7 @@ class NeuralNetwork:
             self.model.add(Embedding(input_dim=st.NUM_WORDS, output_dim=st.EMBEDDING_SIZE, input_length=st.PADDING_LENGTH))
             self.model.add(LSTM(16, return_sequences=True))
             self.model.add(LSTM(8))
-            self.model.add(Dropout(0.5))
-            self.model.add(Dense(1))
-            self.model.add(Activation('sigmoid'))
+            self.model.add(Dense(1, activation='sigmoid'))
 
             optimizer = Adam(lr=st.LEARNING_RATE)
 
