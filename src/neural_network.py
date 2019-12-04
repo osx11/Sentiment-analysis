@@ -1,5 +1,5 @@
 from keras.models import Sequential, load_model
-from keras.layers import Embedding, LSTM, Dropout, Dense, Activation
+from keras.layers import Embedding, LSTM, Dense
 from keras.optimizers import Adam
 from keras.preprocessing.sequence import pad_sequences
 from time import sleep
@@ -120,7 +120,7 @@ class NeuralNetwork:
         x_pad = pad_tokens(tokens)
         prediction = self.model.predict(x_pad)[0][0]
 
-        if st.NEGATIVE_PERCENT <= prediction < st. POSITIVE_PERCENT:
+        if st.NEGATIVE_PERCENT <= prediction < st.POSITIVE_PERCENT:
             result = 'Нейтральный'
         elif prediction >= st.POSITIVE_PERCENT:
             result = 'Позитивный'

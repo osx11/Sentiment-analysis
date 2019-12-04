@@ -5,6 +5,8 @@ from PyQt5 import QtWidgets
 from gui.main_window import *
 from gui.information import *
 from neural_network import NeuralNetwork
+from utils.database_manager import DataBaseManager
+from settings import DATABASE_NAME
 
 
 def open_source_code_link(*args):
@@ -24,6 +26,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.information_button.mousePressEvent = self.show_information
         self.ui.source_code_link.mousePressEvent = open_source_code_link
 
+        self.db_manager = DataBaseManager(DATABASE_NAME)
+
     def predict(self):
         input_text = self.ui.text_input.text()
 
@@ -31,6 +35,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.ui.prediction_result.setText(prediction[0])
         self.ui.prediction_percent.setText(prediction[1])
+
+        self.db_manager.append_result([input_text, prediction[0]])
 
     def show_information(self, *args):
         self.information_window.show()
