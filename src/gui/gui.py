@@ -23,8 +23,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.information_window = InformationWindow()
 
         self.ui.predict_button.clicked.connect(self.predict)
-        self.ui.information_button.mousePressEvent = self.show_information
-        self.ui.source_code_link.mousePressEvent = open_source_code_link
+        self.ui.select_file.clicked.connect(self.analyze_selected_file)
+        self.ui.information_button.clicked.connect(self.show_information)
+        self.ui.source_code_link.clicked.connect(open_source_code_link)
 
         self.db_manager = DataBaseManager(DATABASE_NAME)
 
@@ -40,6 +41,23 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def show_information(self, *args):
         self.information_window.show()
+
+    def analyze_selected_file(self):
+        input_filename = QtWidgets.QFileDialog.getOpenFileName(self, 'Выбрать файл для анализа')[0]
+
+        output_filename = input_filename.split('/')[-1].split('.')[0] + '_result.xlsx'
+        output_database = DataBaseManager(output_filename, save_atexit_only=False)
+
+        with open(input_filename, 'rb') as f:
+            for l in f:
+                input_text = l.decode('utf-8')
+                prediction = self.neural_network.predict(input_text)
+                output_database.append_result([input_text, prediction[0]])
+
+        output_database.save()
+
+        self.ui.prediction_result.setText('Анализ завершен. Результаты сохранены в')
+        self.ui.prediction_percent.setText(output_filename)
 
 
 class InformationWindow(QtWidgets.QDialog):

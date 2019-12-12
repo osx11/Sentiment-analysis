@@ -240,52 +240,6 @@ margin-top: -12px;</string>
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="information_button">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>810</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background: transparent;
-font: 13pt &quot;Fregat&quot;;
-color: #ffffff;</string>
-    </property>
-    <property name="text">
-     <string>О программе</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="source_code_link">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>810</y>
-      <width>191</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background: transparent;
-font: 13pt &quot;Fregat&quot;;
-color: #ffffff;
-</string>
-    </property>
-    <property name="text">
-     <string>Исходный код</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -303,14 +257,87 @@ color: #ffffff;
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/moon/moon.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="information_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>810</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Fregat</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent; color: #fff; text-align: left;</string>
+    </property>
+    <property name="text">
+     <string>О программе</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="source_code_link">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>810</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Fregat</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent; color: #fff; text-align: left;</string>
+    </property>
+    <property name="text">
+     <string>Исходный код</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="select_file">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>810</y>
+      <width>311</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Fregat</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent; color: #fff; text-align: left;</string>
+    </property>
+    <property name="text">
+     <string>Выбрать файл для анализа</string>
+    </property>
+   </widget>
    <zorder>copyright</zorder>
-   <zorder>information_button</zorder>
-   <zorder>source_code_link</zorder>
    <zorder>label</zorder>
    <zorder>main</zorder>
-   <zorder>text_input</zorder>
-   <zorder>horizontalSpacer_3</zorder>
-   <zorder>horizontalSpacer_4</zorder>
+   <zorder>information_button</zorder>
+   <zorder>source_code_link</zorder>
+   <zorder>select_file</zorder>
   </widget>
  </widget>
  <resources>

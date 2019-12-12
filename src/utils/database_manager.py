@@ -5,7 +5,7 @@ import atexit
 
 
 class DataBaseManager:
-    def __init__(self, db_name):
+    def __init__(self, db_name, save_atexit_only=True):
         self.db_name = db_name
 
         if path.exists(self.db_name):
@@ -32,11 +32,12 @@ class DataBaseManager:
             self.sheet['F1'] = 'Позитивных'
             self.sheet['F2'] = '=COUNTIF(B3:B20000,"Позитивный")'
 
-        atexit.register(self.__save)
+        if save_atexit_only:
+            atexit.register(self.save)
 
     def append_result(self, result):
         self.sheet.append(result)
 
-    def __save(self):
+    def save(self):
         self.wb.save(self.db_name)
 
