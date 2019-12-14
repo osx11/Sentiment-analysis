@@ -45,6 +45,9 @@ class MainWindow(QtWidgets.QMainWindow):
     def analyze_selected_file(self):
         input_filename = QtWidgets.QFileDialog.getOpenFileName(self, 'Выбрать файл для анализа')[0]
 
+        if not input_filename:
+            return
+
         output_filename = input_filename.split('/')[-1].split('.')[0] + '_result.xlsx'
         output_database = DataBaseManager(output_filename, save_atexit_only=False)
 
