@@ -1,5 +1,5 @@
-tensorflow>=1.14.0
-keras>=2.2.5
+tensorflow==1.14.0
+keras==2.2.5
 pandas>=0.25.1
 numpy>=1.17.2
 snowballstemmer>=1.9.1

@@ -37,7 +37,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.prediction_result.setText(prediction[0])
         self.ui.prediction_percent.setText(prediction[1])
 
-        self.db_manager.append_result([input_text, prediction[0]])
+        self.db_manager.append_result([input_text, prediction[0], prediction[1]])
 
     def show_information(self, *args):
         self.information_window.show()
@@ -55,7 +55,7 @@ class MainWindow(QtWidgets.QMainWindow):
             for l in f:
                 input_text = l.decode('utf-8')
                 prediction = self.neural_network.predict(input_text)
-                output_database.append_result([input_text, prediction[0]])
+                output_database.append_result([input_text, prediction[0], prediction[1]])
 
         output_database.save()
 

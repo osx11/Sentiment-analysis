@@ -17,7 +17,8 @@ if __name__ == '__main__':
 
         elif start_argument == 'test':
             nn = NeuralNetwork(load_existing_data=True)
-            nn.test_accuracy()
+            # nn.test_accuracy()
+            nn.test_accuracy_custom()
 
         elif start_argument == 'predict':
             nn = NeuralNetwork(load_existing_data=True)
@@ -29,7 +30,7 @@ if __name__ == '__main__':
                     prediction = nn.predict(text)
                     print(f'{prediction[0]} [{prediction[1]}]')
             except (KeyboardInterrupt, SystemExit):
-                print('Thank you and goodbye!')
+                print('До свидания!')
 
         else:
             raise InvalidStartParameter

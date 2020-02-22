@@ -76,6 +76,25 @@ class NeuralNetwork:
         result = self.model.evaluate(x_test_pad, self.y_test)
         print(f'Accuracy: {result[1]:.2%}')
 
+    def test_accuracy_custom(self):
+        (x_train, x_test), (y_train, y_test) = load_data()
+
+        correct = 0
+
+        print('start')
+
+        for i in range(len(x_test)):
+            prediction = self.predict(x_test[i])[1].replace('%', '')
+
+            if y_test[i] == 1 and float(prediction) >= 50:
+                correct += 1
+            elif y_test[i] == 0 and float(prediction) < 50:
+                correct += 1
+            else:
+                print(f'{x_test[i]} ||| Expected: {y_test[i]} ||| Actual: {prediction}')
+
+        print(f'{correct}/20000 ||| {correct/20000}')
+
     def train_model(self):
         """
         тренировка модели
@@ -94,10 +113,10 @@ class NeuralNetwork:
         try:
             self.model.fit(x_train_pad, self.y_train, validation_split=0.05, epochs=st.EPOCHS, batch_size=st.BATCH_SIZE)
         except (KeyboardInterrupt, SystemExit):
-            print('Detected keyboard interrupt. Saving model and exiting.')
+            print('Активирован выход из программы. Сохранение модели.')
         finally:
             self.model.save(f'{st.DATA_FOLDER}/{st.MODEL_NAME}')
-            print('Thank you and goodbye!')
+            print('До свидания!')
 
     def predict(self, text):
         """
